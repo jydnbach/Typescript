@@ -38,8 +38,8 @@ const logWeather = ({
   date: Date;
   weather: string;
 }): void => {
-  console.log(forecast.date);
-  console.log(forecast.weather);
+  console.log(todaysWeather.date);
+  console.log(todaysWeather.weather);
 };
 
-logWeather(forecast);
+logWeather(todaysWeather);
