@@ -11,23 +11,27 @@ const vehicle = new Vehicle('orange');
 // vehicle.honk(); // not allowed bc honk is protected
 console.log(vehicle.color);
 
-// class Car extends Vehicle {
-//   private drive(): void {
-//     // private doesn't mean security. it restricts developers to call it
-//     console.log('vroom'); // overrides Vehicle
-//   }
+class Car extends Vehicle {
+  constructor(public wheels: number, color: string) {
+    super(color); // ref to constructor in parent
+  }
 
-//   startDrivingProcess(): void {
-//     this.drive();
-//     // this.honk(); // not allowed
-//     this.honk; // thanks to protected
-//   }
-// }
+  private drive(): void {
+    // private doesn't mean security. it restricts developers to call it
+    console.log('vroom'); // overrides Vehicle
+  }
 
-// // const vehicle = new Vehicle();
-// // vehicle.drive();
-// // vehicle.honk();
+  startDrivingProcess(): void {
+    this.drive();
+    // this.honk(); // not allowed
+    this.honk; // thanks to protected
+  }
+}
 
-// const car2 = new Car();
-// car2.startDrivingProcess();
-// // car2.honk();
+// const vehicle = new Vehicle();
+// vehicle.drive();
+// vehicle.honk();
+
+const car2 = new Car(4, 'red');
+car2.startDrivingProcess();
+// car2.honk();
