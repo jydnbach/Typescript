@@ -36,7 +36,7 @@ const json = '{"x": 10, "y": 20}';
 const coordinates: { x: number; y: number } = JSON.parse(json);
 console.log(coordinates); // {x: 10, y: 20};
 
-// 2. when we declare a vriable on one line and initializate it later
+// 2. delayed initialization: when we declare a vriable on one line and initializate it later
 let words = ['red', 'green', 'blue'];
 let foundWord: boolean;
 
