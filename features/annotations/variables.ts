@@ -46,4 +46,12 @@ for (let i = 0; i < words.length; i++) {
   }
 }
 
-// 3.
+// 3. variable whose type cannot be inferred correctly
+let numbers = [-10, -1, 12];
+let numberAboveZero: boolean | number = false; // or syntax
+
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] > 0) {
+    numberAboveZero = numbers[i];
+  }
+}
